@@ -22,3 +22,13 @@ end
 def stock_count(shop)
   return shop[:pets].length()
 end
+
+def pets_by_breed(shop, breed) # need to return an array that gets searched by the test function call with .count
+  same_breed_array = []
+  for animal in shop[:pets]
+    if (animal[:breed] == breed)
+      same_breed_array.push(animal)
+    end
+  end
+  return same_breed_array
+end
