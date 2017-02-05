@@ -32,3 +32,12 @@ def pets_by_breed(shop, breed) # need to return an array that gets searched by t
   end
   return same_breed_array
 end
+
+def find_pet_by_name(shop, pet_name)
+  for pet in shop[:pets]
+    if (pet[:name] == pet_name)
+      return pet
+    end
+  end
+end
+
