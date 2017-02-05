@@ -26,19 +26,22 @@ end
 def pets_by_breed(shop, breed) # need to return an array that gets searched by the test function call with .count
   same_breed_array = []
   for animal in shop[:pets]
-    if (animal[:breed] == breed)
-      same_breed_array.push(animal)
-    end
+    same_breed_array.push(animal) if (animal[:breed] == breed)
   end
   return same_breed_array
 end
 
 def find_pet_by_name(shop, pet_name)
   for pet in shop[:pets]
-    if (pet[:name] == pet_name)
-      return pet
-    end
+    return pet if (pet[:name] == pet_name)
   end
   return nil
 end
 
+def remove_pet_by_name(shop, pet_name)
+  for pet in shop[:pets]
+    if (pet[:name] == pet_name)
+      shop[:pets].delete(pet)
+    end
+  end
+end
